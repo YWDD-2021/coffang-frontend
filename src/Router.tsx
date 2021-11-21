@@ -8,13 +8,9 @@ export type hasUserProps = {
 };
 
 const Router: React.FC<hasUserProps> = ({ user }: hasUserProps) => (
-  <div>
     <Switch>
       <Route path="/" exact component={Main} />
-      <Route path="/detail" exact render={() => <Detail user={user} />} />
-      <Redirect path="*" to="/" />
     </Switch>
-  </div>
 );
 
 export default Router;

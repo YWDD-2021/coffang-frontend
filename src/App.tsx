@@ -5,7 +5,6 @@ import Header from './component/Header';
 
 const App: React.FC = () => {
   const [user, setUser] = useState<string | null>(null);
-  setUser(null);
   return (
     <>
       <BrowserRouter>
