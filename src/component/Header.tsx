@@ -1,26 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
-import * as logo from '../../public/coffang_logo_blue.svg';
+import logo from '../asset/image/coffang_logo_blue.svg';
 
 interface Props {
-    userinfo : string;
+  user: string | null;
 }
 
-const Header: React.FC<Props> = ({userinfo}) =>(
-    <Logo></Logo>
+const Header: React.FC<Props> = ({ user }: Props) => (
+  <HeaderDiv>
+    <Logo src={logo} />
     <Menu>
+      <p>SHOP ALL</p>
+      <p>COFFEE</p>
+      <p>BREWING</p>
+      <p>SERVEWARE</p>
     </Menu>
-    <Login></Login>
+    <Login>{user}</Login>
+  </HeaderDiv>
 );
-
-const Logo = styled.img`
-    
+const HeaderDiv = styled.div`
+  height: 80px;
+  border-bottom: 1px solid;
 `;
-
-const Menu = styled.div`
-    
-`;
-const Login = styled.div`
-`;
+const Logo = styled.img``;
+const Menu = styled.div``;
+const Login = styled.div``;
 
 export default Header;
