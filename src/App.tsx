@@ -8,7 +8,6 @@ const App: React.FC = () => {
   return (
     <>
       <BrowserRouter>
-        <Header user={user} />
         <Router user={user} />
       </BrowserRouter>
     </>
