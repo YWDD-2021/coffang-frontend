@@ -10,6 +10,7 @@ export type hasUserProps = {
 const Router: React.FC<hasUserProps> = ({ user }: hasUserProps) => (
     <Switch>
       <Route path="/" exact component={Main} />
+      <Route path ="http://localhost:8080/login/oauth2/code/google" exact component={Main}/>
     </Switch>
 );
 

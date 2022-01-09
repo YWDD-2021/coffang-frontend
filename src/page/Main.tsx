@@ -1,30 +1,42 @@
 import React,{ useState } from 'react';
 import styled from 'styled-components';
+import { User } from '../model/user';
+import Header from '../component/Header';
+import ContentBox from '../component/ContentBox';
 
-const Main: React.FC = () => {
+interface MainPageProps {
+	user: User | null;
+}
+
+const Main: React.FC<MainPageProps> = ({}) => {
   const [menu, setMenu] = useState('shop all');
   return(
-    <MainPage>
-      <MenuContainer>
-        <MenuDetail>
-          <MenuText>SHOP ALL</MenuText>
-          <MenuLine/>
+    <>
+      <Header />
+      <MainPage>
+        <MenuContainer>
+          <MenuDetail>
+            <MenuText>SHOP ALL</MenuText>
+            <MenuLine/>
+          </MenuDetail>
+          <MenuDetail>
+            <MenuText>COFFEE</MenuText>
+            <MenuLine/>
+          </MenuDetail>
+          <MenuDetail>
+            <MenuText>BREWING</MenuText>
+            <MenuLine/>
+          </MenuDetail>
+          <MenuDetail>
+            <MenuText>SERVEWARE</MenuText>
+            <MenuLine/>
         </MenuDetail>
-        <MenuDetail>
-          <MenuText>COFFEE</MenuText>
-          <MenuLine/>
-        </MenuDetail>
-        <MenuDetail>
-          <MenuText>BREWING</MenuText>
-          <MenuLine/>
-        </MenuDetail>
-        <MenuDetail>
-          <MenuText>SERVEWARE</MenuText>
-          <MenuLine/>
-      </MenuDetail>
-      </MenuContainer>
-      <ContentContainer></ContentContainer>
-    </MainPage>
+        </MenuContainer>
+        <ContentContainer>
+          <ContentBox/>
+        </ContentContainer>
+      </MainPage>
+    </>
   )
 };
 
