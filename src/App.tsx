@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import Router from './Router';
+import Header from './component/Header';
 
-function App() {
+const App: React.FC = () => {
+  const [user, setUser] = useState<string | null>(null);
   return (
     <>
-      <div className="App" />
+      <BrowserRouter>
+        <Router user={user} />
+      </BrowserRouter>
     </>
   );
-}
+};
 
 export default App;
